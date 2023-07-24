@@ -15,7 +15,7 @@ export default function PostForm() {
                 <label className="font-medium text-gray-900 block mb-2">Body</label>
                 <input className="postFormInput" type="text" value={body} onChange={(e) => setBody(e.target.value)} placeholder="Body"/>
             </div>
-            <button type="submit" className="postFormButton">Send</button>
+            <button type="submit" className="btn">Send</button>
         </form>
     )
 }
