@@ -1,8 +1,8 @@
-export default function HomePage() {
+export default function PostsPage() {
     return (
         <>
             <header>
-                <h1>Home Page</h1>
+                <h1>Posts Page</h1>
             </header>
         </>
     )
