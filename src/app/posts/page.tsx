@@ -1,6 +1,7 @@
 import Link from "next/link";
+import PostCard from "@/components/PostCard";
 
-const POST = Array.from({length: 10});
+const POST = Array.from({length: 30});
 
 export default function PostsPage() {
     return (
@@ -9,11 +10,9 @@ export default function PostsPage() {
                 <h1>Posts Page</h1>
                 <Link href="/posts/new" className="btn ml-auto">New Post</Link>
             </header>
-            <ul>
+            <ul className="grid grid-cols-3 gap-3">
                 {POST.map((post, index) => (
-                    <li key={index}>
-                        <Link href={`/posts/${index}`}>Post {index}</Link>
-                    </li>
+                    <PostCard key={index} postId={index.toString()}/>
                 ))}
             </ul>
         </>
