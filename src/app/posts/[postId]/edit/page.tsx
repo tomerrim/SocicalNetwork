@@ -17,7 +17,7 @@ export default function PostEditPage(props: PostEdit) {
             <header>
                 <h1>PostEdit {props.params.postId} Page</h1>
             </header>
-            <PostForm/>
+            <PostForm postId={props.params.postId}/>
         </>
     )
 }
