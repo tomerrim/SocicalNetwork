@@ -1,5 +1,5 @@
 import PostForm from "@/components/PostForm";
-import { getPost } from "@/services/posts";
+import { getPost } from "@/services/posts.server";
 
 interface PostEdit {
     params: {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPost } from "@/services/posts";
+import { getPost } from "@/services/posts.server";
 import PostAction from "@/components/PostActions";
 
 interface PostView {
@@ -7,6 +7,8 @@ interface PostView {
         postId: string;
     }
 }
+export const dynamic = "force-static";
+export const revalidate = 3;
 
 export function generateMetadata(props: PostView) {
     return {

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
 import Post from "@/types/Post";
-import { getPosts } from "@/services/posts";
+import { getPosts } from "@/services/posts.server";
+
+export const revalidate = 3;
 
 export const metadata = {
   title: 'Posts',
