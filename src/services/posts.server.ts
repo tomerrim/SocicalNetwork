@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 const BASE_URL = "http://localhost:3000/api/posts";
 
 export async function getPosts() {
-    const snapshot: FirebaseFirestore.QuerySnapshot = await firestore.collection("posts").get();
+    const snapshot: FirebaseFirestore.QuerySnapshot = await firestore.collection("posts").orderBy("updatedAt", "desc").get();
     const posts: Post[] = snapshot.docs.map((doc) => {
         const { title, body } = doc.data();
         return {
@@ -29,6 +29,8 @@ export async function getPost(postId: string) {
         id: document.id,
         title: data.title,
         body: data.body,
+        updatedBy: data.updatedBy,
+        updatedAt: data.updatedAt
     }
 }
 

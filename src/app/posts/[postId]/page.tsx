@@ -22,11 +22,15 @@ export function generateStaticParams() {
 
 export default async function PostViewPage(props: PostView) {
     const { postId } = props.params;
-    const {title, body} = await getPost(postId);
+    const {title, body, updatedBy, updatedAt} = await getPost(postId);
+    const updatedAtFormatted = updatedAt.toDate().toLocaleString("en-GB");
     return (
         <>
             <header className="flex items-center mb-6">
-                <h1>{title}</h1>
+                <div>
+                    <h1>{title}</h1>
+                    <div className="text-sm">{updatedBy?.name} {updatedAtFormatted}</div>
+                </div>
                 <PostAction postId={postId}/>
             </header>
             <p>{body}</p>
